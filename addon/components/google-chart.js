@@ -114,6 +114,7 @@ export default Component.extend({
 
     this.get('googleCharts').loadPackages().then(() => {
       this.sendAction('packagesDidLoad');
+      if (this.get('isDestroyed')) { return; }
       this._renderChart();
     });
   },
