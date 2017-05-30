@@ -126,6 +126,8 @@ export default Component.extend({
   },
 
   _handleResize() {
+    if (this.get('isDestroyed')) { return; }
+
     this.$().css({
       display: 'flex',
     });
