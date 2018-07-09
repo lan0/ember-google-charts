@@ -149,6 +149,9 @@ export default Component.extend({
     const mergedOptions = this.get('mergedOptions');
 
     this.renderChart(data, mergedOptions).then((chart) => {
+      if (this.get('isDestroyed')) {
+        return;
+      }
       this.set('chart', chart);
       this.sendAction('chartDidRender', chart);
     });
