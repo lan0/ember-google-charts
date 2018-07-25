@@ -113,8 +113,8 @@ export default Component.extend({
     warn('You did not specify a chart type', type, options);
 
     this.get('googleCharts').loadPackages().then(() => {
-      this.sendAction('packagesDidLoad');
       if (this.get('isDestroyed')) { return; }
+      this.sendAction('packagesDidLoad');
       this._renderChart();
     });
   },
