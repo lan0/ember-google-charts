@@ -20,7 +20,7 @@ export default Service.extend({
     const { google: { charts, visualization } } = window;
 
     return new RSVP.Promise((resolve, reject) => {
-      if (visualization !== undefined) {
+      if (visualization !== undefined && visualization.CoreChart) {
         resolve();
       } else {
         charts.load('current', {
